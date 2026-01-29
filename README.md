@@ -1,21 +1,21 @@
-# App Clipboard
+# 📋 App Clipboard
 
-A Chrome Extension (Manifest V3) for fast, reliable copying of developer notes, URLs, and presets. It provides a compact, modern popup UI optimized for daily dev workflows, with one‑click copy, quick search, tags, and import/export.
+**App Clipboard** is a Chrome Extension (Manifest V3) for fast, reliable copying of developer notes, URLs, and presets. It delivers a compact, modern popup UI tuned for daily workflows—one‑click copy, quick search, tags, and seamless import/export.
 
-## Highlights
+## ✨ Highlights
 
-- **Instant copy** of notes with one click.
-- **Search + tag filtering** for quick access.
-- **Favorites & archiving** to keep the list clean.
-- **Copy presets** (tag bundles with format selection).
-- **Copy formats**: content only, title + content, links only, JSON.
-- **Bulk actions**: copy filtered notes or just links.
-- **Import/Export** JSON for backup or sharing.
-- **Restore defaults** to reseed common notes and presets.
-- **Swagger shortcut** with editable URL.
-- **Keyboard shortcuts** for power users.
+- ⚡ **Instant copy** of notes with one click.
+- 🔎 **Search + tag filtering** for quick access.
+- ⭐ **Favorites & archiving** to keep the list clean.
+- 🧩 **Copy presets** (tag bundles with format selection).
+- 🧾 **Copy formats**: content only, title + content, links only, JSON.
+- 📦 **Bulk actions**: copy filtered notes or just links.
+- ⬇️⬆️ **Import/Export** JSON for backup or sharing.
+- ♻️ **Restore defaults** to reseed common notes and presets.
+- 🧭 **Swagger shortcut** with editable URL.
+- ⌨️ **Keyboard shortcuts** for power users.
 
-## UI Overview
+## 🧩 UI Overview
 
 The popup is designed to be compact (similar to Google Calendar extension size) with a readable 11px type size. It includes:
 
@@ -29,7 +29,7 @@ The popup is designed to be compact (similar to Google Calendar extension size) 
 - Notes list with per‑note actions
 - Footer with note count and attribution
 
-## Data Model
+## 🧱 Data Model
 
 - **Note**: title, content, categories (tags), favorite, archived, updatedAt
 - **Category**: derived from note tags (many‑to‑many)
@@ -41,42 +41,42 @@ Data is stored locally using `chrome.storage.local` under the key:
 appClipboardData
 ```
 
-## Features in Detail
+## 🛠️ Features in Detail
 
-### Notes
+### 📝 Notes
 - Create, edit, duplicate, archive, delete
 - Favorite notes for quick filtering
 - Click a note card to copy content immediately
 - Link detection turns URLs into clickable links
 
-### Presets
+### 🎯 Presets
 - Click a preset to copy matching notes
 - Edit presets via modal (name, tags, format)
 - Delete presets when no longer needed
 
-### Filters
+### 🧰 Filters
 - Tag chips (All + Favorites + dynamic tags)
 - Search by title, content, or tags
 - Archived toggle (show/hide archived notes)
 
-### Copy Options
+### 📋 Copy Options
 - **Content only**
 - **Title + Content**
 - **Links only** (extracted URLs)
 - **JSON**
 
-### Import / Export
+### 📥📤 Import / Export
 - Export full app data as JSON
 - Import JSON (merges defaults and imported data)
 
-### Restore Defaults
+### ♻️ Restore Defaults
 Reseeds the extension with the original useful notes and presets.
 
-### Swagger Shortcut
+### 🧭 Swagger Shortcut
 - **Edit Swagger** sets the URL
 - **Open Swagger** opens the saved URL in a new tab
 
-## Keyboard Shortcuts
+## ⌨️ Keyboard Shortcuts
 
 - **Ctrl/Cmd + N**: New note
 - **Ctrl/Cmd + S**: Save note (when editor open)
@@ -84,7 +84,7 @@ Reseeds the extension with the original useful notes and presets.
 - **Ctrl/Cmd + K**: Focus and select search
 - **Esc**: Close editor
 
-## Install (Developer Mode)
+## 🧪 Install (Developer Mode)
 
 1. Open Chrome and go to `chrome://extensions`.
 2. Enable **Developer mode** (top right).
@@ -92,7 +92,7 @@ Reseeds the extension with the original useful notes and presets.
 4. Select the `App Clipboard` folder.
 5. Pin the extension for quick access.
 
-## Project Structure
+## 🗂️ Project Structure
 
 ```
 App Clipboard/
@@ -103,11 +103,11 @@ App Clipboard/
 └─ popup.js
 ```
 
-## Permissions
+## 🔐 Permissions
 
 - **storage** – to persist notes locally
 - **clipboardWrite** – to copy content to clipboard
 
-## Attribution
+## ✍️ Attribution
 
 Made by Igor Trifunovic 2026
