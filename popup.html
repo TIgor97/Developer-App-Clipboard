@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>App Clipboard</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+
+<body>
+  <div class="app">
+    <header class="app-header">
+      <div>
+        <p class="app-title">App Clipboard</p>
+        <p class="app-subtitle">Developer quick copy</p>
+      </div>
+      <button class="primary" id="new-note">New</button>
+    </header>
+
+    <section class="controls">
+      <input id="search" type="text" placeholder="Search notes, tags, or URLs" />
+      <div class="control-row">
+        <select id="copy-format">
+          <option value="content">Copy: Content only</option>
+          <option value="full">Copy: Title + Content</option>
+          <option value="links">Copy: Links only</option>
+          <option value="json">Copy: JSON</option>
+        </select>
+        <button class="ghost" id="copy-filtered">Copy filtered</button>
+      </div>
+      <div class="control-row">
+        <button class="ghost" id="toggle-archived">Show archived</button>
+        <button class="ghost" id="copy-links">Copy links</button>
+      </div>
+      <div class="control-row">
+        <button class="ghost" id="open-swagger">Open Swagger</button>
+        <button class="ghost" id="edit-swagger">Edit Swagger</button>
+      </div>
+      <div class="control-row">
+        <button class="ghost" id="export-data">Export</button>
+        <button class="ghost" id="import-data">Import</button>
+        <input id="import-file" type="file" accept="application/json" hidden />
+      </div>
+      <div class="control-row">
+        <button class="ghost" id="restore-defaults">Restore defaults</button>
+      </div>
+      <div class="tags" id="tag-filter"></div>
+    </section>
+
+    <section class="presets">
+      <div class="preset-header">
+        <span>Copy presets</span>
+        <button class="ghost" id="save-preset">Save preset</button>
+      </div>
+      <div class="preset-list" id="preset-list"></div>
+    </section>
+
+    <section class="editor" id="editor" aria-hidden="true">
+      <div class="editor-header">
+        <span id="editor-title">New note</span>
+        <div class="editor-actions">
+          <button class="ghost" id="cancel-edit">Cancel</button>
+          <button class="primary" id="save-note">Save</button>
+        </div>
+      </div>
+      <input id="note-title" type="text" placeholder="Title" maxlength="48" />
+      <textarea id="note-content" rows="5" placeholder="Plain text note. URLs become clickable."></textarea>
+      <input id="note-tags" type="text" placeholder="Tags (comma separated)" />
+    </section>
+
+    <section class="list" id="note-list"></section>
+
+    <section class="modal" id="preset-modal" aria-hidden="true">
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="preset-modal-title">
+        <div class="modal-header">
+          <span id="preset-modal-title">Edit preset</span>
+          <button class="ghost" id="close-preset-modal">Close</button>
+        </div>
+        <input id="preset-name" type="text" placeholder="Preset name" />
+        <input id="preset-tags" type="text" placeholder="Tags (comma separated)" />
+        <select id="preset-format">
+          <option value="content">Content only</option>
+          <option value="full">Title + Content</option>
+          <option value="links">Links only</option>
+          <option value="json">JSON</option>
+        </select>
+        <div class="modal-actions">
+          <button class="ghost" id="cancel-preset">Cancel</button>
+          <button class="primary" id="save-preset-modal">Save</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span id="note-count">0 notes</span>
+      <span class="hint">Click a card to copy</span>
+      <span class="credit">Made by Igor Trifunovic 2026</span>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+
+</html>
